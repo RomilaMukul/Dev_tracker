@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/*
+  ============================================
+  DevTrack Design System — Tailwind v4 Tokens
+  ============================================
+
+  In Tailwind v4, @theme defines custom design tokens.
+  These automatically generate utility classes like:
+    bg-background, text-primary, border-surface, etc.
+
+  The naming convention maps directly to Tailwind utilities:
+    --color-background  →  bg-background, text-background
+    --color-surface     →  bg-surface, text-surface
+    --color-violet-*    →  bg-violet-500, text-violet-400, etc.
+*/
+
+@theme {
+  /* ── Typography ── */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* ── Background & Surface colors ── */
+  --color-background: #0a0a0f;
+  --color-surface: #12121a;
+  --color-surface-hover: #1a1a25;
+  --color-surface-active: #22222f;
+
+  /* ── Border ── */
+  --color-border: #1e1e2e;
+  --color-border-hover: #2e2e42;
+
+  /* ── Violet accent (primary brand color) ── */
+  --color-violet-400: #a78bfa;
+  --color-violet-500: #7c3aed;
+  --color-violet-600: #6d28d9;
+  --color-violet-glow: rgba(124, 58, 237, 0.12);
+
+  /* ── Text hierarchy ── */
+  --color-primary: #f1f1f4;
+  --color-secondary: #8b8b9e;
+  --color-muted: #55556a;
+
+  /* ── Semantic colors ── */
+  --color-green: #22c55e;
+  --color-amber: #f59e0b;
+  --color-red: #ef4444;
+  --color-blue: #3b82f6;
+}
+
+/*
+  ── Global resets & base styles ──
+  Applied to the html/body so the entire app uses
+  the dark background and Inter font by default.
+*/
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-primary);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/*
+  ── Scrollbar styling (Webkit browsers) ──
+  Matches the dark theme; subtle and unobtrusive.
+*/
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-hover);
+}
